@@ -62,7 +62,7 @@ public class WebServer {
     Javalin app = Javalin.create(config -> {
         config.addStaticFiles("/public");
       })
-      .start(7000);
+      .start(7001);
 
     app.get("/", ctx -> indexHandler(ctx));
     app.get("/plan.json", ctx -> planHandler(ctx));

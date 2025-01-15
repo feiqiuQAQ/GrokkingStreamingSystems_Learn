@@ -7,6 +7,7 @@ import com.streamwork.ch02.api.Source;
  * The executor for source components. When the executor is started,
  * a new thread is created to call the getEvents() function of
  * the source component repeatedly.
+ * 这个执行器是为了source类型的算子设计的。
  */
 public class SourceExecutor extends ComponentExecutor {
   private final Source source;
@@ -34,7 +35,7 @@ public class SourceExecutor extends ComponentExecutor {
       for (Event event: eventCollector) {
         outgoingQueue.put(event);
       }
-      eventCollector.clear();
+      eventCollector.clear(); // 清空缓存以接收后续数据
     } catch (InterruptedException e) {
       return false;  // exit thread
     }

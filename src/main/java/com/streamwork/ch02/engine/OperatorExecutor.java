@@ -6,6 +6,7 @@ import com.streamwork.ch02.api.Operator;
 /**
  * The executor for operator components. When the executor is started, a new thread
  * is created to call the apply() function of the operator component repeatedly.
+ * 这似乎是一个操作算子的示例
  */
 public class OperatorExecutor extends ComponentExecutor {
   private final Operator operator;

@@ -8,6 +8,7 @@ import com.streamwork.ch02.api.Event;
 
 /**
  * The base class for executors of source and operator.
+ * 所有源和执行器的基类。
  */
 public abstract class ComponentExecutor extends Process {
   private final Component component;
@@ -19,6 +20,7 @@ public abstract class ComponentExecutor extends Process {
   protected EventQueue outgoingQueue = null;
 
   public ComponentExecutor(Component component) {
+    // 绑定到一个组件上
     this.component = component;
   }
 
