@@ -10,8 +10,8 @@ public class VehicleCountJob {
   public static void main(String[] args) {
     Job job = new Job("vehicle_count");
 
-    // 为job增加一个数据源SensorReader，端口为9990
-    Stream bridgeStream = job.addSource(new SensorReader("sensor-reader", 9990));
+    // 为job增加一个数据源CountinuousVehicleSource,每隔1秒随机生产数据
+    Stream bridgeStream = job.addSource(new CountinuousVehicleSource("CountinuousVehicleSource-reader", 1000));
     // 为流增加一个计数操作算子
     bridgeStream.applyOperator(new VehicleCounter("vehicle-counter"));
 
