@@ -13,7 +13,7 @@ public class VehicleCountJob {
     // 为job增加一个数据源CountinuousVehicleSource,每隔1秒随机生产数据
     Stream bridgeStream = job.addSource(new CountinuousVehicleSource("CountinuousVehicleSource-reader", 1000));
     // 为流增加一个计数操作算子
-    bridgeStream.applyOperator(new VehicleCounter("vehicle-counter"));
+    bridgeStream.applyOperator(new VehicleChargeCouter("vehicle-counter"));
 
     System.out.println("This is a streaming job that counts vehicles in real time. " +
         "Please enter vehicle types like 'car' and 'truck' in the input terminal " +

@@ -11,7 +11,7 @@ import java.util.Random;
 /**
  * ClassName: CountinuousVehicleSource
  * Package: com.streamwork.ch02.job
- * Description:
+ * Description: 自动生成事件，使用interval参数控制生成速度
  *
  * @Author: Zhou Chengyu
  * @Create: 2025/1/15 - 19:18
