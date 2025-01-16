@@ -24,6 +24,9 @@ public class CalculateSumTotalExcutor extends Operator {
     public void apply(Event vehicleEvent, List<Event> eventCollector) {
         total += 1;
         System.out.println("Total sum: " + total);
+
+        // 将事件传递给下游算子
+//        eventCollector.add(vehicleEvent);
     }
 
 }

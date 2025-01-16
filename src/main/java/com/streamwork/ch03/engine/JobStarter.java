@@ -11,20 +11,23 @@ import com.streamwork.ch03.api.Source;
 import com.streamwork.ch03.api.Stream;
 
 public class JobStarter {
+  // 设置队列容量
   private final static int QUEUE_SIZE = 64;
 
   // The job to start
   private final Job job;
-  // List of executors and stream managers
+  // List of executors and stream managers执行器队列和流管理器队列
   private final List<ComponentExecutor> executorList = new ArrayList<ComponentExecutor>();
   private final List<EventDispatcher> dispatcherList = new ArrayList<EventDispatcher>();
 
-  // Connections between component executors
+  // Connections between component executors 组件间的连接器
   private final List<Connection> connectionList = new ArrayList<Connection>();
 
+  // 把job赋给该实例类
   public JobStarter(Job job) {
     this.job = job;
   }
+
 
   public void start() {
     // Set up executors for all the components.
@@ -45,10 +48,12 @@ public class JobStarter {
    */
   private void setupComponentExecutors() {
     // Start from sources in the job and traverse components to create executors
+    // 为每个源都创建执行器
     for (Source source: job.getSources()) {
       SourceExecutor executor = new SourceExecutor(source);
       executorList.add(executor);
       // For each source, traverse the operations connected to it.
+      // 为每个源递归的创建联系
       traverseComponent(source, executor);
     }
   }
@@ -110,6 +115,8 @@ public class JobStarter {
     for (Operator operator: stream.getAppliedOperators()) {
       OperatorExecutor operatorExecutor = new OperatorExecutor(operator);
       executorList.add(operatorExecutor);
+
+      // 为组件添加连接
       connectionList.add(new Connection(executor, operatorExecutor));
       // Setup executors for the downstream operators.
       traverseComponent(operator, operatorExecutor);

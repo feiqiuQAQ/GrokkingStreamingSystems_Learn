@@ -10,6 +10,7 @@ import io.javalin.http.Context;
 
 public class WebServer {
 
+  // 节点类，是一个hashmap
   class Node extends HashMap<String, String> {
     public Node(String name) {
       super();
@@ -18,6 +19,7 @@ public class WebServer {
     }
   }
 
+  // 边
   class Edge extends HashMap<String, String> {
     public Edge(Node from, Node to) {
         super();

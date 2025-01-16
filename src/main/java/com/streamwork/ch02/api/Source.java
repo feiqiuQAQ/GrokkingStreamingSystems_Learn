@@ -14,7 +14,7 @@ public abstract class Source extends Component {
    * Accept events from external into the system.
    * 接受外部事件到系统中
    * The function is abstract and needs to be implemented by users.
-   * @param eventCollector The outgoing event collector
+   * @param eventCollector The outgoing event collector 输出队列收集器
    */
   public abstract void getEvents(List<Event> eventCollector);
 }

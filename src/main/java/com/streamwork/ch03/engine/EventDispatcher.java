@@ -23,7 +23,11 @@ public class EventDispatcher extends Process {
       Event event = incomingQueue.take();
 
       GroupingStrategy grouping = downstreamExecutor.getGroupingStrategy();
+
+      // 传入事件和并行度以获得实例id
       int instance = grouping.getInstance(event, outgoingQueues.length);
+
+      // 推入指定实例id号的输出队列
       outgoingQueues[instance].put(event);
     } catch (InterruptedException e) {
       return false;

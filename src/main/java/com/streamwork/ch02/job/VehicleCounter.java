@@ -28,6 +28,9 @@ class VehicleCounter extends Operator {
 
     System.out.println("VehicleCounter --> ");
     printCountMap();
+
+    // 将事件传递给下游算子
+    eventCollector.add(vehicleEvent);
   }
 
   // 打印逻辑
