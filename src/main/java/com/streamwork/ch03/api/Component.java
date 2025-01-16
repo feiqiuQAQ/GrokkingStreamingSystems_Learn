@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * The base class for all components, including Source and Operator.
+ * 为组件增加了并行度选项
  */
 public class Component implements Serializable {
   private static final long serialVersionUID = 528858207266782093L;

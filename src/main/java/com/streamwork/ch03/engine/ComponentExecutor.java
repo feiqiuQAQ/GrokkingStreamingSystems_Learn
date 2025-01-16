@@ -7,7 +7,7 @@ import com.streamwork.ch03.api.Component;
  */
 public abstract class ComponentExecutor {
   protected Component component;
-  protected InstanceExecutor [] instanceExecutors;
+  protected InstanceExecutor [] instanceExecutors; // 执行器实例列表
 
   public ComponentExecutor(Component component) {
     this.component = component;
@@ -31,6 +31,8 @@ public abstract class ComponentExecutor {
     return component;
   }
 
+
+  // 为每一个执行器实例都绑定输入流和输出流
   public void setIncomingQueues(EventQueue [] queues) {
     for (int i = 0; i < queues.length; ++i) {
       instanceExecutors[i].setIncomingQueue(queues[i]);

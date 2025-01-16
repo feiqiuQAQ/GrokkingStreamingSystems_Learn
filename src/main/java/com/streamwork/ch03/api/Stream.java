@@ -8,6 +8,7 @@ import java.util.Set;
 /**
  * The Stream class represents a data stream coming out of a component.
  * Operators with the correct type can be applied to this stream.
+ * 没看懂为什么要继承Serializable接口但是没有具体实现
  * Example:
  *   Job job = new Job("my_job");
  *   job.addSource(mySource)

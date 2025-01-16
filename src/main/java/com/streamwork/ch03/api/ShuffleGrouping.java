@@ -7,6 +7,8 @@ import java.io.Serializable;
  * instances relatively evenly. This implementation is round robin
  * based instead of random number based because it is simpler and
  * deterministic.
+ *
+ * shuffle grouping采用轮询法将数据均匀分布在不同实例间
  */
 public class ShuffleGrouping implements GroupingStrategy, Serializable {
   private static final long serialVersionUID = -1763295335424683087L;

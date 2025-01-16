@@ -6,6 +6,7 @@ import com.streamwork.ch03.api.GroupingStrategy;
 /**
  * EventDispatcher is responsible for transporting events from
  * the incoming queue to the outgoing queues with a grouping strategy.
+ * 事件调度器
  */
 public class EventDispatcher extends Process {
   private final OperatorExecutor downstreamExecutor;

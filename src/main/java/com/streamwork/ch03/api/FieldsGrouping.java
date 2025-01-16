@@ -12,6 +12,7 @@ public class FieldsGrouping implements GroupingStrategy, Serializable {
    * Get key from an event. Child class can override this function
    * to calculate key in different ways. For example, calculate the
    * key from some specific fields.
+   * 过去key值，子类可复写该方法
    * @param event The event object to extract key from.
    * @return The data to be hashed.
    */
@@ -21,6 +22,7 @@ public class FieldsGrouping implements GroupingStrategy, Serializable {
 
   /**
    * Get target instance id from an event and component parallelism.
+   * 获取实例编号，默认为hash实现
    * @param event The event object to route to the component.
    * @param The parallelism of the component.
    * @return The integer key of this event.

@@ -14,7 +14,7 @@ public abstract class Operator extends Component implements Serializable {
 
   public Operator(String name, int parallelism) {
     super(name, parallelism);
-    this.grouping = new ShuffleGrouping();  // Default
+    this.grouping = new ShuffleGrouping();  // Default 默认为shuffleGrouping
   }
 
   public Operator(String name, int parallelism, GroupingStrategy grouping) {
@@ -24,6 +24,7 @@ public abstract class Operator extends Component implements Serializable {
 
   /**
    * Set up instance.
+   * 设置实例id
    * @param instance The instance id (an index starting from 0) of this source instance.
    */
   public abstract void setupInstance(int instance);
@@ -31,6 +32,7 @@ public abstract class Operator extends Component implements Serializable {
   /**
    * Apply logic to the incoming event and generate results.
    * The function is abstract and needs to be implemented by users.
+   * 应用逻辑到输入事件并生成结果
    * @param event The incoming event
    * @param eventCollector The outgoing event collector
    */
@@ -38,6 +40,7 @@ public abstract class Operator extends Component implements Serializable {
 
   /**
    * Get the grouping key of an event.
+   * 返回分组策略
    * @return The grouping strategy of this operator
    */
   public GroupingStrategy getGroupingStrategy() {

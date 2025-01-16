@@ -15,6 +15,7 @@ public abstract class Source extends Component implements Serializable {
 
   /**
    * Set up instance.
+   * 绑定实例id?
    * @param instance The instance id (an index starting from 0) of this source instance.
    */
   public abstract void setupInstance(int instance);

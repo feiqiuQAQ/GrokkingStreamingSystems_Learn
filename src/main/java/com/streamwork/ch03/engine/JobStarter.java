@@ -77,10 +77,13 @@ public class JobStarter {
 
   private void connectExecutors(Connection connection) {
     // Each component executor could connect to multiple downstream operator executors.
+    // 每个执行器组件可以连接多个下游执行器算子
     // For each of the downstream operator executor, there is a stream manager.
+    // 对每个下游操作执行器，都有一个流管理器
     // Each instance executor of the upstream executor connects to the all the stream managers
     // of the downstream executors first. And each stream manager connects to all the instance
     // executors of the downstream executor.
+    // 上游执行器的每个执行器实例首先连接下游的全部流管理器，每个流管理器连接所有的下游执行器实例
     // Note that in this version, there is no shared "from" component and "to" component.
     // The job looks like a single linked list.
     EventDispatcher dispatcher = new EventDispatcher(connection.to);

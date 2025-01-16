@@ -15,6 +15,8 @@ public class VehicleCountJob {
     // 为流增加一个计数操作算子
     bridgeStream.applyOperator(new VehicleChargeCouter("vehicle-counter"));
 
+    bridgeStream.applyOperator(new CalculateSumTotalExcutor("sum-total-counter"));
+
     System.out.println("This is a streaming job that counts vehicles in real time. " +
         "Please enter vehicle types like 'car' and 'truck' in the input terminal " +
         "and look at the output");
