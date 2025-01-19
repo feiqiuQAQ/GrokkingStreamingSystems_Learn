@@ -16,7 +16,7 @@ import java.util.Random;
  * @Create: 2025/1/17 - 08:59
  * @Version: v1.0
  */
-public class CountinuousVehicleSource extends Source {
+public class ContinuousVehicleSource extends Source {
     private static final long serialVersionUID = 7153550920021993542L;
 
     private int instance = 0;
@@ -26,7 +26,7 @@ public class CountinuousVehicleSource extends Source {
     public int interval = 1000;
 
     // 传感器读取器的实现
-    public CountinuousVehicleSource(String name, int parallelism, int interval) {
+    public ContinuousVehicleSource(String name, int parallelism, int interval) {
         // 把name赋给父类
         super(name, parallelism);
 
