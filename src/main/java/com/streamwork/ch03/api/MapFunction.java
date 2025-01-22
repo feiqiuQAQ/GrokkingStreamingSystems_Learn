@@ -1,6 +1,8 @@
 package com.streamwork.ch03.api;
 
-public interface MapFunction {
+import java.io.Serializable;
+
+public interface MapFunction extends Serializable {
     /**
      *
      * @return The result of event after map.

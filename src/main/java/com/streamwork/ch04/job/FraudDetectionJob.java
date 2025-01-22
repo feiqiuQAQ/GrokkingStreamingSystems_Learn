@@ -11,7 +11,7 @@ public class FraudDetectionJob {
     Job job = new Job("fraud_detection_job");
 
     // Create a stream from a source.
-    Stream transactionOut = job.addSource(new TransactionSource("transaction source", 1, 9990));
+    Stream transactionOut = job.addSource(new TransactionSource("transaction source", 1, 9990, true));
     // One stream can have multiple channels. Different operator can be hooked up
     // to different channels to receive different events. When no channel is selected,
     // the default channel will be used.
