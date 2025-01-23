@@ -12,6 +12,7 @@ public abstract class Process {
   public Process() {
     this.thread = new Thread() {
       public void run() {
+        System.out.println("runOnce");
         while (runOnce());
       }
     };
