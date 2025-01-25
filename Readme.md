@@ -30,6 +30,14 @@ and
 ```bash
 nc -lk 9991
 ```
+or windows system
+```bash
+nc -lp 9990
+```
+and
+```bash
+nc -lp 9991
+```
 2. Start the job in the output (the third) terminal. Replace `/` with `\` on windows.
 ```bash
 # Chapter 2. A basic vehicle count job.
