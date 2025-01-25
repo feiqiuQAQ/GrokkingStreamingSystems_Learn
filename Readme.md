@@ -30,7 +30,8 @@ and
 ```bash
 nc -lk 9991
 ```
-or windows system
+or 报错：nc: invalid option -- k
+ON windows system
 ```bash
 nc -lp 9990
 ```
