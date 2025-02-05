@@ -1,5 +1,7 @@
 package com.streamwork.ch02.server;
 
+import com.alibaba.fastjson.JSON;
+import com.streamwork.ch02.api.Event;
 import com.streamwork.ch02.job.TestJob;
 import com.streamwork.ch02.job.VehicleEvent;
 import com.streamwork.ch02.rpc.io.RpcNode;
@@ -17,9 +19,13 @@ public class Distributed extends RpcNode {
 
         worker.incomingQueue.add(new VehicleEvent("test1"));
 
-        VehicleEvent event2 = new VehicleEvent("test2");
+//        VehicleEvent event2 = new VehicleEvent("test2");
 
-        worker.call(9992, "addIncomingQueue", new Object[]{});
+        Object result = worker.call(9992, "addIncomingQueue", new Object[]{"test2"});
+
+        Object result2 = worker.call(9992, "work", new Object[]{});
+
+        Object result3 = worker.call(9992, "addIncomingQueue", new Object[]{"test3"});
     }
 }
 

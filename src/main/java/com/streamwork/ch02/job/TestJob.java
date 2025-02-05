@@ -6,5 +6,5 @@ import com.streamwork.ch02.func.ApplyFunc;
 import java.util.List;
 
 public class TestJob {
-    public ApplyFunc applyFunc = (Event event, List<Event> eventCollector) -> System.out.println("Runnable is running");
+    public ApplyFunc applyFunc = (Event event, List<Event> eventCollector) -> System.out.println("Runnable is running:");
 }
