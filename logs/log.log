@@ -30,3 +30,7 @@ Wed Feb 05 09:19:10 CST 2025-server started on port:9992
 Wed Feb 05 09:19:10 CST 2025-method: addIncomingQueueparams: [Ljava.lang.Object;@361c9b62 resp: null
 Wed Feb 05 09:19:13 CST 2025-method: workparams: [Ljava.lang.Object;@1bd4fdd resp: null
 Wed Feb 05 09:20:54 CST 2025-method: addIncomingQueueparams: [Ljava.lang.Object;@364478d4 resp: null
+Thu Feb 06 08:10:46 CST 2025-server started on port:9992
+Thu Feb 06 08:10:46 CST 2025-method: addIncomingQueueparams: [Ljava.lang.Object;@2048a535 resp: null
+Thu Feb 06 08:10:46 CST 2025-method: workparams: [Ljava.lang.Object;@1b68b9a4 resp: null
+Thu Feb 06 08:10:46 CST 2025-method: addIncomingQueueparams: [Ljava.lang.Object;@36574a45 resp: null
