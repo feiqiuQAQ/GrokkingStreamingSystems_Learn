@@ -23,9 +23,11 @@ public class RpcChannel extends ChannelInboundHandlerAdapter implements Callable
     private String result;
     private RpcRequest request;
     private int serverPort;
+    private String serverAddress;
 
-    public RpcChannel(int serverPort) {
+    public RpcChannel(String ipaddress, int serverPort) {
         this.serverPort = serverPort;
+        this.serverAddress = ipaddress;
     }
 
     @Override

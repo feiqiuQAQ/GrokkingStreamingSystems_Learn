@@ -1,7 +1,9 @@
 package com.streamwork.ch03.job;
 
 import com.streamwork.ch03.api.*;
+import com.streamwork.ch03.engine.DistributedJobStarter;
 import com.streamwork.ch03.engine.JobStarter;
+import com.streamwork.ch03.engine.WorkerStarter;
 
 public class ParallelizedVehicleCountJob3 {
 
@@ -19,7 +21,18 @@ public class ParallelizedVehicleCountJob3 {
     System.out.println("This is a streaming job that counts vehicles from the input stream " +
             "in real time. Please enter vehicle types like 'car' and 'truck' in the " +
             "input terminals and look at the output");
-    JobStarter starter = new JobStarter(job);
-    starter.start();
+
+    DistributedJobStarter starter = new DistributedJobStarter(job);
+//    JobStarter starter = new JobStarter(job);
+
+    try {
+      starter.start();
+    } catch (Exception e) {
+      e.printStackTrace(); // 打印错误信息
+    }
+
+    WorkerStarter workerStarter = new WorkerStarter(job);
+    workerStarter.start();
+
   }
 }

@@ -16,11 +16,11 @@ public class Distributed extends RpcNode {
 
 //        VehicleEvent event2 = new VehicleEvent("test2");
 
-        Object result = worker.call(9992, "addIncomingQueue", new Object[]{"test2"});
+        Object result = worker.call("127.0.0.1" ,9992, "addIncomingQueue1", new Object[]{"test2"});
 
-        Object result2 = worker.call(9992, "work", new Object[]{});
+        Object result2 = worker.call("127.0.0.1" ,9992, "work", new Object[]{});
 
-        Object result3 = worker.call(9992, "addIncomingQueue", new Object[]{"test3"});
+        Object result3 = worker.call("127.0.0.1" ,9992, "addIncomingQueue1", new Object[]{"test3"});
     }
 }
 

@@ -94,7 +94,7 @@ public class RpcNode {
         return JSON.toJSONString(ret);
     }
 
-    public Object call(int port, String methodName, Object[] args) {
+    public Object call(String ipaddress ,int port, String methodName, Object[] args) {
         RpcRequest request = new RpcRequest();
         request.setRequestId(UUID.randomUUID().toString());
         request.setMethodName(methodName);
@@ -104,7 +104,7 @@ public class RpcNode {
             parameterTypes[i] = args[i].getClass();
         }
         request.setParameterTypes(parameterTypes);
-        RpcChannel rpcChannel = new RpcChannel(port);
+        RpcChannel rpcChannel = new RpcChannel(ipaddress, port);
         rpcChannel.setRequest(request);
         try {
             bind(rpcChannel);
@@ -136,7 +136,8 @@ public class RpcNode {
                     pipeline.addLast(rpcChannel);
                 }
             });
-        bootstrap.connect("127.0.0.1", rpcChannel.getServerPort()).sync();
+//        bootstrap.connect("127.0.0.1", rpcChannel.getServerPort()).sync();
+        bootstrap.connect(rpcChannel.getServerAddress(), rpcChannel.getServerPort()).sync();
     }
 
     private int randPort() {

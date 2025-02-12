@@ -45,7 +45,7 @@ public class Worker extends RpcNode {
     }
 
     public synchronized void addIncomingQueue(String type) {
-//        System.out.println("addIncomingQueue");
+//        System.out.println("addIncomingQueue1");
         Event event = new VehicleEvent(type);
         incomingQueue.add(event);
     }

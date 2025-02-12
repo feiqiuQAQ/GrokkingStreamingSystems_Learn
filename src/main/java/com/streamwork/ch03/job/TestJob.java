@@ -1,7 +1,7 @@
 package com.streamwork.ch03.job;
 
-import com.streamwork.ch02.api.Event;
-import com.streamwork.ch02.func.ApplyFunc;
+import com.streamwork.ch03.api.Event;
+import com.streamwork.ch03.func.ApplyFunc;
 import com.streamwork.ch03.api.MapFunction;
 
 import java.util.List;
