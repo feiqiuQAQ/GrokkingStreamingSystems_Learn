@@ -1,7 +1,11 @@
 package com.streamwork.ch02.rpc.io;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.streamwork.ch03.common.Serializer;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +22,13 @@ public class RpcNodeTest {
     public void testCallMethod() throws Exception {
         SampleServer sampleServer1 = new SampleServer();
         SampleServer sampleServer2 = new SampleServer();
-        VehicleEventMapper func = new VehicleEventMapper();
+        ApplyFunc func = new VehicleEventMapper();
+
+//        String funcBytes = JSON.toJSONString(func);
+
+        String funcBytes = JSON.toJSONString(func, SerializerFeature.WriteClassName);
+
+//        byte[] funcBytes2 = new byte[funcBytes.length];
 
         Runnable run = () -> {
             try {
@@ -29,7 +39,7 @@ public class RpcNodeTest {
         Thread thread = new Thread(run);
         thread.start();
         Object r = sampleServer1
-            .call(sampleServer2.getPort(), "foo", new Object[]{func});
+            .call(sampleServer2.getPort(), "foo", new Object[]{funcBytes});
         JSON.parseObject(r.toString(), ApplyFunc.class);
 //        Assert.assertEquals(sampleServer2.foo("1"), JSON.parseObject(r.toString(), Map.class));
     }

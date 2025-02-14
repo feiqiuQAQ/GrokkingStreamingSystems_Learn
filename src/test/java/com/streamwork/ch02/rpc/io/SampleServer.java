@@ -7,13 +7,14 @@
 package com.streamwork.ch02.rpc.io;
 
 
+import com.alibaba.fastjson.JSON;
 import com.streamwork.ch03.api.Event;
 import com.streamwork.ch03.func.ApplyFunc;
 import com.streamwork.ch03.job.VehicleEvent;
-import com.streamwork.ch03.job.VehicleEventMapper;
+import com.streamwork.ch03.common.Serializer;
 
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +24,9 @@ import java.util.Map;
  */
 public class SampleServer extends RpcNode {
 
-    public void foo(VehicleEventMapper func) {
+    public void foo(String funcBytes) throws IOException, ClassNotFoundException {
+        ApplyFunc func = JSON.parseObject(funcBytes, ApplyFunc.class);
+        System.out.println("foo");
         Event event = new VehicleEvent("car");
         List<Event> events = new ArrayList<Event>();
         func.apply(event, events);

@@ -90,12 +90,38 @@ public class RpcNode {
         Class<?> serverClass = serverObj.getClass();
         String methodName = rpcRequest.getMethodName();
         Class<?>[] parameterTypes = rpcRequest.getParameterTypes();
+
+        // 打印方法需要的参数类型
+        System.out.println("Method required parameter types: ");
+        for (Class<?> paramType : parameterTypes) {
+            System.out.println(paramType.getName());
+        }
+
         Method method = serverClass.getDeclaredMethod(methodName, parameterTypes);
         method.setAccessible(true);
         Object[] parameters = rpcRequest.getParameters();
+
+        // 打印提供的参数类型
+        System.out.println("Provided parameter types: ");
+        for (Object param : parameters) {
+            System.out.println(param.getClass().getName());
+        }
+
+        // 检查是否一致
+        if (parameterTypes.length != parameters.length) {
+            throw new Exception("Parameter count mismatch!");
+        }
+
+        for (int i = 0; i < parameterTypes.length; i++) {
+            if (!parameterTypes[i].isAssignableFrom(parameters[i].getClass())) {
+                throw new Exception("Parameter type mismatch at index " + i);
+            }
+        }
+
         Object ret = method.invoke(serverObj, parameters);
         return JSON.toJSONString(ret);
     }
+
 
     public Object call(int port, String methodName, Object[] args) {
         RpcRequest request = new RpcRequest();
