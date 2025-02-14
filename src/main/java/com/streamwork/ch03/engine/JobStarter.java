@@ -13,13 +13,11 @@ import com.streamwork.ch03.api.Stream;
 public class JobStarter {
   // 设置队列容量
   private final static int QUEUE_SIZE = 64;
-
   // The job to start
   private final Job job;
   // List of executors and stream managers执行器队列和流管理器队列
   private final List<ComponentExecutor> executorList = new ArrayList<ComponentExecutor>();
   private final List<EventDispatcher> dispatcherList = new ArrayList<EventDispatcher>();
-
   // Connections between component executors 组件间的连接器
   private final List<Connection> connectionList = new ArrayList<Connection>();
 
@@ -33,14 +31,14 @@ public class JobStarter {
     // Set up executors for all the components.
     setupComponentExecutors();
 
+    // Start web server
+    new WebServer(job.getName(), connectionList).start();
+
     // All components are created now. Build the connections to connect the components together.
     setupConnections();
 
     // Start all the processes.
     startProcesses();
-
-    // Start web server
-    new WebServer(job.getName(), connectionList).start();
   }
 
   /**

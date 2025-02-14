@@ -40,12 +40,13 @@ public class Worker extends RpcNode {
         executor.setOutgoingQueue(outgoingQueue);
     }
 
-    public void work() {
+    public synchronized void work() {
         executor.start();
     }
 
-    public void addIncomingQueue() {
-        System.out.println("addIncomingQueue");
-//        incomingQueue.add(event);
+    public synchronized void addIncomingQueue(String type) {
+//        System.out.println("addIncomingQueue1");
+        Event event = new VehicleEvent(type);
+        incomingQueue.add(event);
     }
 }

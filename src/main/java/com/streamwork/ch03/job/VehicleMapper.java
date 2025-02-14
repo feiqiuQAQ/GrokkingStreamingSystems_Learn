@@ -12,11 +12,6 @@ public class VehicleMapper extends MapOperator {
     private static final long serialVersionUID = 1L;
 
     public VehicleMapper(String name, int parallelism) {
-        super(name, parallelism, new MapFunction() {
-            @Override
-            public Event map(Event input) {
-                return new VehicleEvent(input.getData() + "_map");
-            }
-        });
+        super(name, parallelism, (MapFunction) input -> new VehicleEvent(input.getData() + "_map"));
     }
 }
