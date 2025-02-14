@@ -87,3 +87,48 @@ Wed Feb 12 14:12:50 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@3561
 Wed Feb 12 14:13:10 CST 2025-server started on port:9992
 Wed Feb 12 14:13:10 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@282cb7c7 resp: {"id":0,"ipaddress":"127.0.0.1:14781","parallelism":2,"taskType":"Continuous-reader"}
 Wed Feb 12 14:13:10 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@3561c410 resp: {"id":1,"ipaddress":"127.0.0.2:14039","parallelism":2,"taskType":"vehicle-Mapper"}
+Wed Feb 12 20:03:04 CST 2025-server started on port:9992
+Wed Feb 12 20:03:04 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@282cb7c7 resp: {"id":0,"ipaddress":"127.0.0.1:14540","parallelism":2,"taskType":"Continuous-reader"}
+Wed Feb 12 20:03:04 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@3561c410 resp: {"id":1,"ipaddress":"127.0.0.2:14008","parallelism":2,"taskType":"vehicle-Mapper"}
+Wed Feb 12 20:05:18 CST 2025-server started on port:9992
+Wed Feb 12 20:05:18 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@282cb7c7 resp: {"id":0,"ipaddress":"127.0.0.1:14524","parallelism":2,"taskType":"Continuous-reader"}
+Wed Feb 12 20:05:18 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@3561c410 resp: {"id":1,"ipaddress":"127.0.0.2:14601","parallelism":2,"taskType":"vehicle-Mapper"}
+Wed Feb 12 20:05:37 CST 2025-server started on port:9992
+Wed Feb 12 20:05:37 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@282cb7c7 resp: {"id":0,"ipaddress":"127.0.0.1:14227","parallelism":2,"taskType":"Continuous-reader"}
+Wed Feb 12 20:05:37 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@3561c410 resp: {"id":1,"ipaddress":"127.0.0.2:14809","parallelism":2,"taskType":"vehicle-Mapper"}
+Wed Feb 12 20:06:21 CST 2025-server started on port:9992
+Wed Feb 12 20:06:21 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@282cb7c7 resp: {"id":0,"ipaddress":"127.0.0.1:14308","parallelism":2,"taskType":"Continuous-reader"}
+Wed Feb 12 20:06:21 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@3561c410 resp: {"id":1,"ipaddress":"127.0.0.2:14761","parallelism":2,"taskType":"vehicle-Mapper"}
+Wed Feb 12 20:07:26 CST 2025-server started on port:9992
+Wed Feb 12 20:07:26 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@282cb7c7 resp: {"id":0,"ipaddress":"127.0.0.1:14741","parallelism":2,"taskType":"Continuous-reader"}
+Wed Feb 12 20:07:26 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@3561c410 resp: {"id":1,"ipaddress":"127.0.0.2:14547","parallelism":2,"taskType":"vehicle-Mapper"}
+Wed Feb 12 20:10:04 CST 2025-server started on port:9992
+Wed Feb 12 20:10:04 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@282cb7c7 resp: {"id":0,"ipaddress":"127.0.0.1:14313","parallelism":2,"taskType":"Continuous-reader"}
+Wed Feb 12 20:10:04 CST 2025-method: requireTaskparams: [Ljava.lang.Object;@3561c410 resp: {"id":1,"ipaddress":"127.0.0.2:14858","parallelism":2,"taskType":"vehicle-Mapper"}
+Fri Feb 14 17:38:45 CST 2025-server started on port:12132
+Fri Feb 14 17:39:12 CST 2025-server started on port:12517
+Fri Feb 14 17:42:20 CST 2025-server started on port:12797
+Fri Feb 14 17:44:41 CST 2025-server started on port:11371
+Fri Feb 14 17:45:04 CST 2025-server started on port:11815
+Fri Feb 14 17:45:06 CST 2025-method: fooparams: [Ljava.lang.Object;@18bf3d14 resp: null
+Fri Feb 14 17:49:34 CST 2025-server started on port:11883
+Fri Feb 14 17:58:13 CST 2025-server started on port:12744
+Fri Feb 14 18:12:02 CST 2025-server started on port:11717
+Fri Feb 14 18:16:05 CST 2025-server started on port:11951
+Fri Feb 14 18:32:45 CST 2025-server started on port:11139
+Fri Feb 14 18:36:28 CST 2025-server started on port:11250
+Fri Feb 14 18:37:30 CST 2025-server started on port:11147
+Fri Feb 14 18:42:33 CST 2025-server started on port:11421
+Fri Feb 14 18:42:57 CST 2025-server started on port:12480
+Fri Feb 14 18:43:38 CST 2025-server started on port:12453
+Fri Feb 14 18:44:27 CST 2025-server started on port:11538
+Fri Feb 14 18:47:52 CST 2025-server started on port:12500
+Fri Feb 14 18:48:20 CST 2025-server started on port:12895
+Fri Feb 14 18:48:37 CST 2025-method: fooparams: [Ljava.lang.Object;@57d5872c resp: null
+Fri Feb 14 18:50:29 CST 2025-server started on port:11632
+Fri Feb 14 18:51:04 CST 2025-server started on port:11164
+Fri Feb 14 18:54:10 CST 2025-server started on port:12726
+Fri Feb 14 18:56:32 CST 2025-server started on port:12940
+Fri Feb 14 18:56:58 CST 2025-server started on port:11836
+Fri Feb 14 18:59:20 CST 2025-server started on port:12095
+Fri Feb 14 21:12:08 CST 2025-method: fooparams: [Ljava.lang.Object;@223f3642 resp: null

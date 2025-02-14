@@ -23,7 +23,7 @@ public class ContinuousVehicleSource extends Source {
 
     public final List<String> vehiceList = Arrays.asList("van", "car", "truck");
 
-    public int interval = 1000;
+    public int interval = 100;
 
     // 传感器读取器的实现
     public ContinuousVehicleSource(String name, int parallelism, int interval) {

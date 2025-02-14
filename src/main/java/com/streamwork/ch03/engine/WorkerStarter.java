@@ -6,9 +6,7 @@ import com.streamwork.ch03.common.Task;
 import com.streamwork.ch03.func.ApplyFunc;
 import com.streamwork.ch03.rpc.io.RpcNode;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class WorkerStarter extends RpcNode {
     // 设置队列容量
@@ -38,7 +36,24 @@ public class WorkerStarter extends RpcNode {
         System.out.println("done");
 
         /* 初始化算子的输入输出队列 */
+//        EventQueue [] incomeQueues = new EventQueue[t.getParallelism()];
+//        for (int i = 0; i < t.getParallelism(); i++) {
+//            incomeQueues[i] = new EventQueue(QUEUE_SIZE);
+//        }
+        EventQueue outcomeQueue = new EventQueue(QUEUE_SIZE);
+        assert executor != null;
+//        executor.setIncomingQueues(incomeQueues);
+        executor.setOutgoingQueue(outcomeQueue);
 
+        /* 为算子添加流管理器 */
+//        EventDispatcher eventDispatcher = addEventDispatcher(t);
+
+
+
+
+
+        /* 启动算子实例 */
+        executor.start();
 
         // Set up executors for all the components.
 //        setupComponentExecutors();
@@ -52,6 +67,14 @@ public class WorkerStarter extends RpcNode {
         // Start all the processes.
 //        startProcesses();
     }
+
+//    private EventDispatcher addEventDispatcher(Task t) {
+//        for (Connection c : connectionList) {
+//            if (c.from.component.getName().equals(t.getTaskType())) {
+//
+//            }
+//        }
+//    }
 
     private Task requireTask() {
         Task arg = JSON.parseObject(
@@ -154,7 +177,7 @@ public class WorkerStarter extends RpcNode {
             executorList.add(operatorExecutor);
 
             // 为组件添加连接
-//            connectionList.add(new Connection(executor, operatorExecutor));
+            connectionList.add(new Connection(executor, operatorExecutor));
             // Setup executors for the downstream operators.
             return traverseComponent(operator, operatorExecutor, task);
         }
