@@ -92,14 +92,8 @@ public class CliFrontend {
             return 1;
         }
 
+    }
 
-    }
-    // 启动job
-    private void startJob(Job job) {
-        JobStarter starter = new JobStarter(job);
-        starter.start();
-        System.out.println("Job started successfully");
-    }
 
     private void stop(String[] params) {
     }
